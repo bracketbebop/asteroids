@@ -8,7 +8,6 @@ from player import Player
 from asteroidfield import AsteroidField
 from shot import Shot
 
-
 def main():
     print(f"Starting Asteroids with pygame version: {pygame.version.ver}")
     print(f"Screen width: {SCREEN_WIDTH}\nScreen height: {SCREEN_HEIGHT}")
@@ -30,10 +29,10 @@ def main():
     player = Player(x=SCREEN_WIDTH / 2, y=SCREEN_HEIGHT / 2)
     asteroid_field = AsteroidField()
 
-    # New instance of GUI window
+    # New instance of game window
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
-    # Set FPS to 60
+    # Lock FPS to 60
     clock: pygame.time.Clock = pygame.time.Clock()
     dt: float = 0.0
 
@@ -73,7 +72,6 @@ def main():
 
         # Limit FPS to 60 and get delta time
         dt = clock.tick(60) / 1000
-
 
 if __name__ == "__main__":
     main()

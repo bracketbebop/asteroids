@@ -7,7 +7,6 @@ from constants import *
 
 Edge = tuple[pygame.Vector2, Callable[[float], pygame.Vector2]]
 
-
 class AsteroidField(pygame.sprite.Sprite):
     containers: pygame.sprite.Group
 

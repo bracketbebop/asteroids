@@ -1,13 +1,10 @@
 import pygame
 from pygame.math import Vector2
-#from circleshape import CircleShape
 
-# Base class for game objects
 class CircleShape(pygame.sprite.Sprite):
     containers: tuple[pygame.sprite.Group, ...]
 
     def __init__(self, x: float, y: float, radius: float) -> None:
-        # we will be using this later
         if hasattr(self, "containers"):
             super().__init__(*self.containers)
         else:
