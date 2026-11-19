@@ -50,11 +50,17 @@ def main():
         log_state()
 
         # check for collisions
-        for i in asteroids:
-            if player.collides_with(i):
+        for i, a in enumerate(asteroids):
+            if player.collides_with(a):
                 log_event("player_hit")
                 print("Game over!")
                 sys.exit()
+
+            for s in shots:
+                if a.collides_with(s):
+                    log_event("asteroid_shot")
+                    a.split()
+                    s.kill()
 
         # Draw screen
         screen.fill("black")
